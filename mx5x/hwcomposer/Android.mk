@@ -27,4 +27,4 @@ LOCAL_C_INCLUDES += hardware/imx/mx5x/libgralloc
 LOCAL_C_INCLUDES += external/linux-lib/ipu
 LOCAL_CFLAGS:= -DLOG_TAG=\"hwcomposer\"
 LOCAL_MODULE_TAGS := eng
-include $(BUILD_SHARED_LIBRARY)
+#include $(BUILD_SHARED_LIBRARY)
