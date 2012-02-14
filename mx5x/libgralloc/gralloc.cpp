@@ -368,8 +368,8 @@ static int gralloc_alloc(alloc_device_t* dev,
         return -EINVAL;
 
     size_t size, alignedw, alignedh;
-    if (format == HAL_PIXEL_FORMAT_YCbCr_420_SP || format == HAL_PIXEL_FORMAT_YCbCr_422_I || 
-            format == HAL_PIXEL_FORMAT_YCbCr_422_SP || format == HAL_PIXEL_FORMAT_YCbCr_420_I ||
+    if (/*format == HAL_PIXEL_FORMAT_YCbCr_420_SP ||*/ format == HAL_PIXEL_FORMAT_YCbCr_422_I || 
+            format == HAL_PIXEL_FORMAT_YCbCr_422_SP || /*format == HAL_PIXEL_FORMAT_YCbCr_420_I ||*/
 	format == HAL_PIXEL_FORMAT_YV12)
     {
         // FIXME: there is no way to return the alignedh
@@ -380,8 +380,8 @@ static int gralloc_alloc(alloc_device_t* dev,
             case HAL_PIXEL_FORMAT_YCbCr_422_I:
                 size = alignedw * alignedh * 2;
                 break;
-            case HAL_PIXEL_FORMAT_YCbCr_420_SP:
-            case HAL_PIXEL_FORMAT_YCbCr_420_I:
+            /*case HAL_PIXEL_FORMAT_YCbCr_420_SP:
+            case HAL_PIXEL_FORMAT_YCbCr_420_I:*/
             case HAL_PIXEL_FORMAT_YV12:
                 size = (alignedw * alignedh) + (w/2 * h/2) * 2;
                 break;
